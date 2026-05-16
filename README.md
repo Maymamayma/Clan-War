@@ -62,5 +62,3 @@ Since the game is built with vanilla HTML, CSS, and JavaScript, you can run it d
 3. Play!
 
 No build steps or server required.
-
-## Project Structure
