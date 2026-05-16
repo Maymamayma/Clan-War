@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guerre des Clans</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="start-screen" class="screen active">
+            <h1>Guerre des Clans</h1>
+            <div class="players-setup">
+                <div class="player-setup">
+                    <h2>Joueur 1</h2>
+                    <div class="clan-selection">
+                        <h3>Choisissez votre clan:</h3>
+                        <div class="clan-options">
+                            <div class="clan-option" data-clan="mountains">
+                                <h4>Clan des Montagnes</h4>
+                                <p>3 Guerriers, 2 Archers, 1 Mage</p>
+                                <p class="advantage">Avantage: Défense renforcée</p>
+                            </div>
+                            <div class="clan-option" data-clan="plains">
+                                <h4>Clan des Plaines</h4>
+                                <p>2 Guerriers, 3 Archers, 1 Mage</p>
+                                <p class="advantage">Avantage: Attaques à distance précises</p>
+                            </div>
+                            <div class="clan-option" data-clan="sages">
+                                <h4>Clan des Sages</h4>
+                                <p>1 Guerrier, 2 Archers, 3 Mages</p>
+                                <p class="advantage">Avantage: Sorts puissants, faible défense</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-setup">
+                    <h2>Joueur 2</h2>
+                    <div class="clan-selection">
+                        <h3>Choisissez votre clan:</h3>
+                        <div class="clan-options">
+                            <div class="clan-option" data-clan="mountains">
+                                <h4>Clan des Montagnes</h4>
+                                <p>3 Guerriers, 2 Archers, 1 Mage</p>
+                                <p class="advantage">Avantage: Défense renforcée</p>
+                            </div>
+                            <div class="clan-option" data-clan="plains">
+                                <h4>Clan des Plaines</h4>
+                                <p>2 Guerriers, 3 Archers, 1 Mage</p>
+                                <p class="advantage">Avantage: Attaques à distance précises</p>
+                            </div>
+                            <div class="clan-option" data-clan="sages">
+                                <h4>Clan des Sages</h4>
+                                <p>1 Guerrier, 2 Archers, 3 Mages</p>
+                                <p class="advantage">Avantage: Sorts puissants, faible défense</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="start-placement" disabled>Commencer le placement</button>
+        </div>
+
+        <div id="placement-screen" class="screen">
+            <h2>Phase de placement - <span id="placement-turn">Joueur 1</span></h2>
+            <div class="game-board-container">
+                <div id="placement-board" class="game-board">
+                    <!-- Le plateau sera généré par JavaScript -->
+                </div>
+                <div class="game-info">
+                    <div id="units-to-place" class="units-container">
+                        <!-- Les unités à placer seront générées par JavaScript -->
+                    </div>
+                    <div class="action-buttons">
+                        <button id="finish-placement" disabled>Terminer le placement</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="battle-screen" class="screen">
+            <h2>Phase de combat - <span id="current-turn">Joueur 1</span></h2>
+            <div class="game-phase-info">
+                Phase: <span id="game-phase">Lancer le dé</span>
+            </div>
+            <div class="game-board-container">
+                <div id="battle-board" class="game-board">
+                    <!-- Le plateau sera généré par JavaScript -->
+                </div>
+                <div class="game-info">
+                    <div class="player-info">
+                        <div id="player1-info" class="player-status">
+                            <h3>Joueur 1</h3>
+                            <div class="units-left"></div>
+                        </div>
+                        <div id="player2-info" class="player-status">
+                            <h3>Joueur 2</h3>
+                            <div class="units-left"></div>
+                        </div>
+                    </div>
+                    <div id="action-log" class="action-log">
+                        <h3>Journal de bataille</h3>
+                        <div id="log-entries"></div>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="roll-dice" class="action-button">Lancer le dé</button>
+                        <button id="end-phase" class="action-button" disabled>Fin de phase</button>
+                        <button id="attack" class="action-button" disabled>Attaquer</button>
+                        <button id="defend" class="action-button" disabled>Défendre</button>
+                        <button id="special" class="action-button" disabled>Pouvoir spécial</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dice-modal" class="modal">
+            <div class="modal-content">
+                <h2>Lancer de dé</h2>
+                <div id="dice">
+                    <div class="dice-value">?</div>
+                </div>
+                <div id="dice-result"></div>
+                <button id="close-dice-modal">Fermer</button>
+            </div>
+        </div>
+
+        <div id="winner-modal" class="modal">
+            <div class="modal-content">
+                <h2>Fin de la partie</h2>
+                <p id="winner-message"></p>
+                <button id="restart-game">Rejouer</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
